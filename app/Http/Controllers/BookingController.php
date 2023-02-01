@@ -20,12 +20,13 @@ class BookingController extends Controller
             "data" => $result
         ]);
     }
-    public function getAllBookings()
+    public function getAllBookings(Request $request)
     {
+        $user_id = $request->input("user_id");
         return response()->json(
             [
                 "message" => "Successfully",
-                "data" => $this->bookingService->getAllBooking()
+                "data" => $this->bookingService->getAllBooking($user_id)
             ]
         );
     }
@@ -38,6 +39,17 @@ class BookingController extends Controller
             [
                 "message" => "Search Successfully",
                 "data" => $this->bookingService->searchBooking($textSearch)
+            ]
+        );
+    }
+
+    public function detailBooking(Request $request)
+    {
+        $booking_id = $request->input("booking_id");
+        return response()->json(
+            [
+                "message" => "Detail Successfully",
+                "data" => $this->bookingService->detailBooking($booking_id)
             ]
         );
     }

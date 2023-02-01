@@ -31,11 +31,22 @@ class BookingRepository extends BaseRepository implements \App\Repositories\Inte
         ->get();
     }
 
-    public function getAllBooking():mixed
+    public function getAllBooking($user_id):mixed
     {
         return  DB::table('bookings')
-        ->select('bookings.id','pitchs.namepitch','bookings.time_start','bookings.time_end','bookings.day','bookings.contact','bookings.description')
+        ->select('bookings.id','users.fullname','bookings.user_id','pitchs.namepitch','bookings.time_start','bookings.time_end','bookings.day','bookings.contact','bookings.description')
         ->join('pitchs','pitchs.id','=','bookings.pitch_id')
+        ->join('users','users.id','=','bookings.pitch_id')
+        ->where('bookings.user_id','<>',$user_id)
         ->get();       
+    }
+    public function detailBooking($booking_id):mixed
+    {
+        return  DB::table('bookings')
+        ->select('bookings.id','users.fullname','bookings.user_id','pitchs.namepitch','bookings.time_start','bookings.time_end','bookings.day','bookings.contact','bookings.description')
+        ->join('pitchs','pitchs.id','=','bookings.pitch_id')
+        ->join('users','users.id','=','bookings.pitch_id')
+        ->where('bookings.id',$booking_id)
+        ->get(); 
     }
 }
