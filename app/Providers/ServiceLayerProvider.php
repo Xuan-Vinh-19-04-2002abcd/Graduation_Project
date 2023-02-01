@@ -6,11 +6,13 @@ use App\Services\Implementations\MailService;
 use App\Services\Implementations\PitchService;
 use App\Services\Implementations\PostService;
 use App\Services\Implementations\BookingService;
+use App\Services\Implementations\MatchService;
 use App\Services\Interfaces\IAccountService;
 use App\Services\Interfaces\IMailService;
 use App\Services\Interfaces\IPitchService;
 use App\Services\Interfaces\IPostService;
 use App\Services\Interfaces\IBookingService;
+use App\Services\Interfaces\IMatchService;
 use Illuminate\Support\ServiceProvider;
 class ServiceLayerProvider extends ServiceProvider
 {
@@ -40,6 +42,10 @@ class ServiceLayerProvider extends ServiceProvider
         $this->app->singleton(
             IBookingService::class,
             BookingService::class
+        );
+        $this->app->singleton(
+            IMatchService::class,
+            MatchService::class
         );
     }
 
