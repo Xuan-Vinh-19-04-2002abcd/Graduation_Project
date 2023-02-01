@@ -18,14 +18,19 @@ class BookingService implements IBookingService {
 
         return $this->bookingRepository->getInfoBooking($data['pitch_id']);
     }
-    public function getAllBooking(): mixed
+    public function getAllBooking($user_id): mixed
     {
-        return $this->bookingRepository->getAllBooking();
+        return $this->bookingRepository->getAllBooking($user_id);
 
 
     }
     public function searchBooking($textsearch):mixed
     {
         return $this->bookingRepository->searchBooking($textsearch);
+    }
+
+    public function detailBooking($booking_id):mixed
+    {
+        return $this->bookingRepository->detailBooking($booking_id);
     }
 }

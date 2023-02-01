@@ -8,6 +8,6 @@ interface IBookingRepository extends IRepository
 
     public function getInfoBooking($idPitch): mixed;
 
-
-    public function getAllBooking(): mixed;
+    public function detailBooking($booking_id): mixed;
+    public function getAllBooking($user_id): mixed;
 }
