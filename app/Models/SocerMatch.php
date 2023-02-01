@@ -10,4 +10,7 @@ class SocerMatch extends Model
     
     use HasFactory;
     protected $table = 'SocerMatchs';
+    protected $fillable = ["user_id", 'booking_id', 'status'];
+
+    public $timestamps = true;
 }
