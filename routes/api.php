@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\MatchController;
 use App\Http\Controllers\PitchController;
 use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
@@ -41,3 +42,8 @@ Route::get("/allposts", [PostController::class, "getAllPosts"]);
 Route::post("/bookings", [BookingController::class, "createBooking"]);
 Route::get("/allbookings", [BookingController::class, "getAllBookings"]);
 Route::post("/bookings/search", [BookingController::class, "searchBooking"]);
+Route::get("/detailBooking", [BookingController::class, "detailBooking"]);
+
+
+
+Route::post("/matchs", [MatchController::class, "matchSocer"]);
