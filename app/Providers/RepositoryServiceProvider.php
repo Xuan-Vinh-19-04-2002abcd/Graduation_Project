@@ -10,6 +10,8 @@ use App\Repositories\Interfaces\IPostRepository;
 use App\Repositories\Implementations\PostRepository;
 use App\Repositories\Interfaces\IBookingRepository;
 use App\Repositories\Implementations\BookingRepository;
+use App\Repositories\Interfaces\IMatchRepository;
+use App\Repositories\Implementations\MatchRepository;
 use Illuminate\Support\ServiceProvider;
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -39,6 +41,10 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->singleton(
             IBookingRepository::class,
             BookingRepository::class
+        );
+        $this->app->singleton(
+            IMatchRepository::class,
+            MatchRepository::class
         );
         
     }

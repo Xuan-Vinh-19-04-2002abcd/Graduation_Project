@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('SocerMatchs', function (Blueprint $table) {
-            $table->increments("user_id")->from(1000000);
+            $table->increments("id")->from(1000000);
+            $table->unsignedInteger("user_id")->from(1000000);
             $table->unsignedInteger("booking_id")->from(1000000);
             $table->enum('status',['pending','done','cancelled']);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
