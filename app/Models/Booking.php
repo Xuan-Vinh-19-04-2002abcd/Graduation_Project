@@ -10,7 +10,7 @@ class Booking extends Model
     use HasFactory;
 
     protected $table = "bookings";
-    protected $fillable = ['pitch_id','time_start','time_end','day','contact','description']; 
+    protected $fillable = ['pitch_id','user_id','time_start','time_end','day','contact','description']; 
     public function pitchs () {
         return $this->belongsTo(\App\Models\Pitch::class);
     }
