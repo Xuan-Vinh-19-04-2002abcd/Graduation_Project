@@ -7,12 +7,14 @@ use App\Services\Implementations\PitchService;
 use App\Services\Implementations\PostService;
 use App\Services\Implementations\BookingService;
 use App\Services\Implementations\MatchService;
+use App\Services\Implementations\ReviewService;
 use App\Services\Interfaces\IAccountService;
 use App\Services\Interfaces\IMailService;
 use App\Services\Interfaces\IPitchService;
 use App\Services\Interfaces\IPostService;
 use App\Services\Interfaces\IBookingService;
 use App\Services\Interfaces\IMatchService;
+use App\Services\Interfaces\IReviewService;
 use Illuminate\Support\ServiceProvider;
 class ServiceLayerProvider extends ServiceProvider
 {
@@ -46,6 +48,10 @@ class ServiceLayerProvider extends ServiceProvider
         $this->app->singleton(
             IMatchService::class,
             MatchService::class
+        );
+        $this->app->singleton(
+            IReviewService::class,
+            ReviewService::class
         );
     }
 
