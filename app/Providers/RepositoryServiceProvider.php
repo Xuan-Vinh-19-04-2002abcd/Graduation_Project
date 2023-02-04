@@ -12,6 +12,8 @@ use App\Repositories\Interfaces\IBookingRepository;
 use App\Repositories\Implementations\BookingRepository;
 use App\Repositories\Interfaces\IMatchRepository;
 use App\Repositories\Implementations\MatchRepository;
+use App\Repositories\Interfaces\IReviewRepository;
+use App\Repositories\Implementations\ReviewRepository;
 use Illuminate\Support\ServiceProvider;
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -46,7 +48,10 @@ class RepositoryServiceProvider extends ServiceProvider
             IMatchRepository::class,
             MatchRepository::class
         );
-        
+        $this->app->singleton(
+            IReviewRepository::class,
+            ReviewRepository::class
+        );
     }
 
     public function boot()
