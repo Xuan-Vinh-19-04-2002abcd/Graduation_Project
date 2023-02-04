@@ -8,6 +8,7 @@ use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ReviewController;
 
 
 /*
@@ -47,3 +48,6 @@ Route::get("/detailBooking", [BookingController::class, "detailBooking"]);
 
 
 Route::post("/matchs", [MatchController::class, "matchSocer"]);
+
+
+Route::get("/reviews", [ReviewController::class, "getallReviews"]);
