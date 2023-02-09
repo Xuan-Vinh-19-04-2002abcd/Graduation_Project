@@ -27,7 +27,7 @@ class RegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            "fullname" => 'required|max:20"',
+            "fullname" => 'required|max:20',
             "phonenumber" => 'required|numeric|min:10',
             'email' => 'required|max:255|email|unique:users',
             'password' => 'required|min:8|confirmed',
@@ -39,6 +39,7 @@ class RegisterRequest extends FormRequest
     {
         return [
             'fullname.required' => 'Name is required',
+            'fullname.max' => 'The length of fullname less to 2 chacracters',
             'phonenumber.required' => 'Phone number is required',
             'phonenumber.numeric' => 'Umformat Phonenumber',
             'email.required' => 'Email is required',
