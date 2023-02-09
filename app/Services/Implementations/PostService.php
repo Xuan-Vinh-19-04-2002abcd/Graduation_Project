@@ -20,7 +20,8 @@ class PostService implements IPostService {
     }
     public function getAllPosts(): array
     {
-        return $this->postRepository->all($toArray = true);
-    }
         
+        return $this->postRepository->allPosts()->toarray();
+    }
+    
 }
