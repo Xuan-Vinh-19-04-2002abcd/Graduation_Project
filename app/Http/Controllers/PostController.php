@@ -19,7 +19,7 @@ class PostController extends Controller
             $image = $request->file('image');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('image')->storeAs($destinationPath,$image_name);
-            $data["image"] = 'storage/images/product/'.$image_name;
+            $data["image"] = 'storage/images/products/'.$image_name;
         }
         $result = $this->postService->createPost((array)$data);
         return response()->json([
