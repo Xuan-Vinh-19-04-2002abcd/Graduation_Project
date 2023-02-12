@@ -21,7 +21,11 @@ class PostService implements IPostService {
     public function getAllPosts(): array
     {
         
-        return $this->postRepository->allPosts()->toarray();
+        $data = $this->postRepository->allPosts()->toarray();
+        foreach($data as $value){
+            $value->image= config("app.url").'/'.$value->image;
+        }   
+        return $data;
     }
     
 }
