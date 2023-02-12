@@ -11,7 +11,10 @@ class PitchService implements IPitchService {
     {}
     public function getAllPitchs(): mixed
     {
-        $allPitch = $this->pitchRepository->all($toArray = true);
+        $allPitch = $this->pitchRepository->all($toArray = false);
+        foreach($allPitch as $value){
+            $value->image= config("app.url").'/storage/images/products/'.$value->image;
+        }  
         return $allPitch;
 
     }
