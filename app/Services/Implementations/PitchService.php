@@ -21,12 +21,17 @@ class PitchService implements IPitchService {
     public function getDetailPitch($id): mixed
     {
         $detailPitch = $this->pitchRepository->findById($id);
+        $detailPitch->image = config('app.url').'/storage/images/products/'.$detailPitch->image;
         return $detailPitch;
     }
 
 
     public function searchPitch($textSearch): mixed
     {
-        return $this->pitchRepository->searchPitch($textSearch);
+        $searchResult = $this->pitchRepository->searchPitch($textSearch);
+        foreach($searchResult as $value){
+            $value->image= config("app.url").'/storage/images/products/'.$value->image;
+        } 
+        return $searchResult;
     }
 }
