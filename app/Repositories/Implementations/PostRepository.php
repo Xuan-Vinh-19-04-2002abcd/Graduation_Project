@@ -18,4 +18,12 @@ class PostRepository extends BaseRepository implements \App\Repositories\Interfa
         ->join('users','users.id','=','posts.user_id')
         ->get();
     }
+
+    public function adminAllPosts():mixed
+    {
+        return  DB::table('posts')
+        ->select('posts.id','users.id as user_id','users.fullname','users.avatar','posts.content','posts.image','posts.created_at')
+        ->join('users','users.id','=','posts.user_id')
+        ->get();
+    }
 }

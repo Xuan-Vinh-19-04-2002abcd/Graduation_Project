@@ -38,7 +38,7 @@ class PostController extends Controller
     }
      //Admin
      public function showPosts(){
-        $posts = $this->postService->getAllPosts();
+        $posts = $this->postService->addminAllPost();
         return view('pages.posts.index',compact('posts'));
     }
     public function deletePosts($id){

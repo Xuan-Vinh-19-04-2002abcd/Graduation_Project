@@ -7,30 +7,31 @@
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">User's id</th>
+            <th scope="col">User</th>
             <th scope="col">Content</th>
             <th scope="col">Images</th>
             <th scope="col">Created At</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
+    
     <tbody>
         @php
-
+        
         @endphp
         @foreach ( $posts as $post)
         <tr>
-            <td>{{ $post["user_id"]}}</td>
-            <td>{{ $post["content"] }}</td>
-            <td><img src={{$post["image"]}} alt="image" style="height: 80px; width:100px"><img></td>
-            <td>{{ date_create($post["created_at"])->format("d-m-Y H:i:s")}}</td>
-            <td>
+            <td>{{ $post->fullname }}</td>
+            <td>{{ $post->content}}</td>
+            <td><img src="{{$post->image}}" alt="image" style="height: 80px; width:100px"><img></td>
+            <td>{{ date_create($post->created_at)->format("d-m-Y H:i:s")}}</td>
             <td>
                 <button class="btn btn-danger mb-2">
                     <i class="bi bi-x-octagon-fill"></i>
                 </button>
+                
 
-                <form role="form" action="post/delete/{{$post["id"]}}" method="post">
+        <form role="form" action="{{route('post.delete',$post->id)}}" method="post">
                 @csrf
                 <button type="submit" class="btn btn-danger">
                         <i class="bi bi-trash-fill"></i>
