@@ -22,10 +22,18 @@ class PostService implements IPostService {
     {
         
         $data = $this->postRepository->allPosts()->toarray();
+        
         foreach($data as $value){
             $value->image= config("app.url").'/'.$value->image;
         }   
         return $data;
     }
+    public function addminAllPost():array
+    {
+        $data = $this->postRepository->adminAllPosts()->toarray();
+         
+        return $data;
+    }
+
     
 }
