@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Services\Interfaces\IPostService;
 use Illuminate\Http\Request;
 
@@ -34,5 +35,17 @@ class PostController extends Controller
                 "data" => $this->postService->getAllPosts()
             ]
         );
+    }
+     //Admin
+     public function showPosts(){
+        $posts = $this->postService->getAllPosts();
+        return view('pages.posts.index',compact('posts'));
+    }
+    public function deletePosts($id){
+        $pitch = Post::find($id);
+        $pitch->delete($id);
+        // $this->pitchService->deletePitchs($id);
+            //echo ("Delete successfully");
+        return redirect()->route('post.show')->with('success','Delete Successfully');
     }
 }

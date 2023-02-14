@@ -56,4 +56,9 @@ class AccountService implements  IAccountService {
       {
           // TODO: Implement updateInformation() method.
       }
+
+      public function getAllCustommer():mixed
+      {
+          return $this->userRepository->all($toArray = false);
+      }
 }

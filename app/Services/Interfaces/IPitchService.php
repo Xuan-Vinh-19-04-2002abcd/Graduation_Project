@@ -6,4 +6,6 @@ interface IPitchService {
     public function getDetailPitch($id): mixed;
 
     public function searchPitch($textSearch):mixed;
+
+    public function deletePitchs($id): mixed;
 }
