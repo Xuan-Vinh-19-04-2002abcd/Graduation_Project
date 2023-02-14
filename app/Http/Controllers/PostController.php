@@ -15,9 +15,16 @@ class PostController extends Controller
     public function createPost(Request $request)
     {
         $data = $request->all();
+        if($request->hasFile("image")){
+            $destinationPath = 'public/images/products';
+            $image = $request->file('image');
+            $image_name = $image->getClientOriginalName();
+            $path = $request->file('image')->storeAs($destinationPath,$image_name);
+            $data["image"] = 'storage/images/products/'.$image_name;
+        }
         $result = $this->postService->createPost((array)$data);
         return response()->json([
-            "message" => "Create Successfully"
+            "message" => "Create Successfully",
         ]);
     }
     public function getAllPosts()

@@ -11,20 +11,28 @@ class PitchService implements IPitchService {
     {}
     public function getAllPitchs(): mixed
     {
-        $allPitch = $this->pitchRepository->all($toArray = true);
+        $allPitch = $this->pitchRepository->all($toArray = false);
+        foreach($allPitch as $value){
+            $value->image= config("app.url").'/'.$value->image;
+        }  
         return $allPitch;
 
     }
     public function getDetailPitch($id): mixed
     {
         $detailPitch = $this->pitchRepository->findById($id);
+        $detailPitch->image = config('app.url').'/'.$detailPitch->image;
         return $detailPitch;
-    }
+    }   
 
 
     public function searchPitch($textSearch): mixed
     {
-        return $this->pitchRepository->searchPitch($textSearch);
+        $searchResult = $this->pitchRepository->searchPitch($textSearch);
+        foreach($searchResult as $value){
+            $value->image= config("app.url").'/'.$value->image;
+        } 
+        return $searchResult;
     }
 
     public function deletePitchs($id):mixed
