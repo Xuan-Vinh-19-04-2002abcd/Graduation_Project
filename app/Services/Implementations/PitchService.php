@@ -13,7 +13,7 @@ class PitchService implements IPitchService {
     {
         $allPitch = $this->pitchRepository->all($toArray = false);
         foreach($allPitch as $value){
-            $value->image= config("app.url").'/storage/images/products/'.$value->image;
+            $value->image= config("app.url").'/'.$value->image;
         }  
         return $allPitch;
 
@@ -21,16 +21,16 @@ class PitchService implements IPitchService {
     public function getDetailPitch($id): mixed
     {
         $detailPitch = $this->pitchRepository->findById($id);
-        $detailPitch->image = config('app.url').'/storage/images/products/'.$detailPitch->image;
+        $detailPitch->image = config('app.url').'/'.$detailPitch->image;
         return $detailPitch;
-    }
+    }   
 
 
     public function searchPitch($textSearch): mixed
     {
         $searchResult = $this->pitchRepository->searchPitch($textSearch);
         foreach($searchResult as $value){
-            $value->image= config("app.url").'/storage/images/products/'.$value->image;
+            $value->image= config("app.url").'/'.$value->image;
         } 
         return $searchResult;
     }
