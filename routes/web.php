@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\PitchController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::get('home', function () {
+    return view('layout.main');
+})->name("home.index");;
+Route::prefix("/custommer")->group(function () {
+    Route::get("", [UserController::class, "getAllCustommer"])->name("customers.index");;
+});
+Route::prefix("pitch")->group(function () {
+    Route::get("/", [PitchController::class, "showPitchs"])->name("pitchs.index");
+    Route::post('/delete/{id}', [PitchController::class, "deletePitchs"])->name("pitchs.deletePitchs");
+    Route::get("/add", [PitchController::class, "getAddForm"])->name("getAddForm");
+    Route::post('/addForm',[PitchController::class,"postAddForm"])->name("postAddForm");
+    Route::post('/edit/{id}', [PitchController::class, "editPitch"])->name("pitchs.editPitch");
+    Route::post('/updateForm/{id}',[PitchController::class,"updateForm"])->name("updateform");
+
+});
+Route::prefix("post")->group(function(){
+    Route::get("/", [PostController::class, "showPosts" ])->name("post.show");
+    Route::post('/delete/{id}', [PostController::class, "deletePosts"])->name("post.delete");
+});
+Route::prefix("login")->group(function () {
+    Route::get("/",[HomeController::class,"getAdmin"])->name("login.index");
+    Route::post('/post', [HomeController::class, "loginAdmin"])->name("loginAdmin");
 });
