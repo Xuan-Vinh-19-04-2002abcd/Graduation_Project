@@ -7,4 +7,6 @@ interface IAccountService {
     public function forgotPassword($email,$newPassword);
     public function validateForgotPasswordToken(Request $request);
     public function updateInformation();
+
+    public function getAllCustommer(): mixed;
 }

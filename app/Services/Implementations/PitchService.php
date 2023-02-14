@@ -26,4 +26,9 @@ class PitchService implements IPitchService {
     {
         return $this->pitchRepository->searchPitch($textSearch);
     }
+
+    public function deletePitchs($id):mixed
+    {
+        return $this->pitchRepository->delete($id);
+    }
 }
