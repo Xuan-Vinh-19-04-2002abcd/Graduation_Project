@@ -14,8 +14,7 @@ class ReviewRepository extends BaseRepository implements \App\Repositories\Inter
     public function getAllReview($pitch_id): mixed
     {
         return  DB::table('reviews')
-        ->select('users.id as user_id','users.fullname','users.avatar','pitchs.namepitch','reviews.title')
-        ->join('pitchs','pitchs.id','=','reviews.pitch_id')
+        ->select('users.id as user_id','users.fullname','users.avatar','reviews.title')
         ->join('users','users.id','=','reviews.user_id')
         ->where('reviews.pitch_id',$pitch_id)
         ->get();
