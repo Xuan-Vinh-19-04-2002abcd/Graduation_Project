@@ -50,4 +50,4 @@ Route::get("/detailBooking", [BookingController::class, "detailBooking"]);
 Route::post("/matchs", [MatchController::class, "matchSocer"]);
 
 
-Route::get("/reviews", [ReviewController::class, "getallReviews"]);
+Route::post("/reviews", [ReviewController::class, "getallReviews"]);
