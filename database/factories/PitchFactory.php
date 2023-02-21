@@ -29,19 +29,18 @@ class PitchFactory extends Factory
         "704 Hoa Vang – Quận Liên Chiểu,  TP Đà Nẵng"];
         $array_name = ["Chuyên Việt","Tuyên Sơn","Duy Tân","Võ Chí Công","Xuân 68","Hòa Xuân"," Trường Chinh","Trưng Nữ Vương","Trang Hoàng","Ba Đình"];
         $array_image = [
-           "https://i.imgur.com/LuDj1vD.png",
-           "https://i.imgur.com/PoLjzQJ.png",
-           "https://i.imgur.com/DLVfvJz.png",
-           "https://i.imgur.com/aK20ylT.png",
-           "https://i.imgur.com/qK9HBXm.png",
-           "https://i.imgur.com/hfIwpX5.png"
+           "storage/images/pitchs/anh1.png",
+           "storage/images/pitchs/anh2.png",
+           "storage/images/pitchs/anh3.png",
+           "storage/images/pitchs/anh4.png",
+           "storage/images/pitchs/vinh.png",
         ];
 
         return [
             'namepitch' => $array_name[rand(0,9)],
             'address' => $array_address[rand(0,8)],
             'phonenumber' =>fake()->phoneNumber(),
-            'image' => $array_image[rand(0,5)],
+            'image' => $array_image[rand(0,4)],
             'price_hour' => $array_price[rand(0,2)]
         ];
     }

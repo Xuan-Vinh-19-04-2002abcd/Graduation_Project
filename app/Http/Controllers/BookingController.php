@@ -14,6 +14,7 @@ class BookingController extends Controller
     public function createBooking(Request $request)
     {
         $data = $request->all();
+        $data["user_id_away"]=null;
         $result = $this->bookingService->createBooking((array)$data);
         return response()->json([
             "message" => "Create Successfully",
