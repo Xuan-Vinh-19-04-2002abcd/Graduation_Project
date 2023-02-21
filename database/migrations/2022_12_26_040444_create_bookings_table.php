@@ -17,13 +17,15 @@ return new class extends Migration
             $table->increments("id")->from(1000000);
             $table->unsignedInteger("pitch_id");
             $table->unsignedInteger("user_id");
-            $table->string("time_start");
-            $table->string("time_end");
-            $table->date("day");
+            $table->unsignedInteger("user_id_away")->nullable();
+            $table->string("day");
+            $table->enum('time',['90','60','120']);
             $table->string('contact');
             $table->string('description');
+            $table->enum('status',['pending','done','cancelled']);
             $table->foreign('pitch_id')->references('id')->on('pitchs')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id_away')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

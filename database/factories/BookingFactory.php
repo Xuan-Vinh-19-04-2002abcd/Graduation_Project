@@ -19,8 +19,6 @@ class BookingFactory extends Factory
         return [
             'pitch_id'=> rand(1000000,1000009),
             'user_id'=> rand(1000000,1000009),
-            'time_start'=> fake()->time(),
-            'time_end'=> fake()->time(),
             'day'=> fake()->date(),
             'contact' => fake()->phoneNumber(),
             'description' => fake() ->text()
