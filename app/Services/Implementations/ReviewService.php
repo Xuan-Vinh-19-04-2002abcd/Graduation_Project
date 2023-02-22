@@ -14,5 +14,10 @@ class ReviewService implements IReviewService {
     {
         return $this->reviewRepository->getAllReview($pitch_id)->toarray();
     }
+
+    public function adminAllReviews():mixed
+    {
+        return $this->reviewRepository->adminAllReview();
+    }
         
 }

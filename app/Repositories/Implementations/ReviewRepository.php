@@ -20,4 +20,13 @@ class ReviewRepository extends BaseRepository implements \App\Repositories\Inter
         ->where('reviews.pitch_id',$pitch_id)
         ->get();
     }
+
+    public function adminAllReview():mixed
+    {
+        return  DB::table('reviews')
+        ->select('users.id as user_id','users.fullname','users.avatar','pitchs.namepitch','reviews.title')
+        ->join('pitchs','pitchs.id','=','reviews.pitch_id')
+        ->join('users','users.id','=','reviews.user_id')
+        ->get();
+    }
 }
