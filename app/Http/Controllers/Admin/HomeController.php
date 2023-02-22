@@ -34,4 +34,7 @@ class HomeController extends Controller
             return view("pages.login")->with('error', 'Whoops! invalid email and password.');;
         }
     }
+    public function logout(){
+        return view("pages.login");
+    }
 }

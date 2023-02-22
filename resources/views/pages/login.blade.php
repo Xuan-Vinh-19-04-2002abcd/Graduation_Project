@@ -14,21 +14,26 @@
             height: 90vh;
             width: 100vw;
             overflow: hidden;
+            background-image: url("/assets/Images/logback.jpeg");
+            /* background-color: #cccccc; */
             background-position: 50% 50%;
             background-repeat: 0;
             background-size: cover;
-            color: #b1a684;
+            color: #8B0000
+
+;
         }
         main {
             display: flex;
             align-items: center;
-            justify-content: space-evenly;
+            justify-content: space-around;
             height: 100%;
             width: 100%;
         }
         main form {
             width: 30%;
-            text-align: center
+            margin-right: 40px;
+            text-align: justify;
         }
         main h1 {
             text-align: center;
@@ -40,7 +45,7 @@
             height: 3rem;
             width: 75%;
             padding: 0 2rem;
-            border: 1px solid black;
+            border: 1px solid rgb(114 25 25);
             border-radius: 1.5rem;
             font-size: 1.2rem;
         }
@@ -51,6 +56,9 @@
         .password-block {
             position: relative;
             margin-top: 2rem;
+        }
+        .password-block span {
+          display: none;
         }
         .icon {
             position: absolute;
@@ -64,37 +72,64 @@
         .btn-block button {
             font-size: 1.5rem;
             padding: 0.5rem 3rem;
-            border: 2px solid black;
+            /* border: 2px solid black; */
             border-radius: 1.5rem;
             background: transparent;
+            color: aliceblue
         }
         .btn-block button:hover {
             transform: scale(1.03);
             font-weight: bold;
+            color: rgb(219, 68, 41)
         }
         .error {
             color: red;
             text-align: center;
             margin: 2rem;
         }
+        input:valid ~ span{
+            display: block;
+        }
+        .password-block span i.hide-btn::before{
+            content: "\f070";
+        }
     </style>
 </head>
 
 <body>
     <main>
-        <h1>Login as role  <br /> Admin</h1>
+        {{-- <h1>Login as role  <br /> Admin</h1> --}}
     
         <form  action="{{ route('loginAdmin') }}" method="post">
             @csrf
-            <input type="text" name="username" placeholder="Username...">
+            <input type="text" name="username" placeholder="Username..." >
+            @error('username')
+                <div class="error">{{$message}}</div>
+            @enderror
             <div class="password-block">
-                <input type="password" name="password" placeholder="Password...">
-                <i class="fas fa-eye-slash icon"></i>
+                <input type="password" class ="password" name="password" placeholder="Password..." >
+                <span class="show-btn"><i class="fas fa-eye icon"></i></span>
             </div>
+            @error("password") 
+                <div class="error">{{$message}}</div>
+            @enderror
             <div class="btn-block">
             <button type="submit" class="btn btn-primary">Login</button>
             </div>
         </form>
     </main>
     </body>
+    <script>
+        const passField = document.querySelector(".password");
+        const showBtn = document.querySelector("span i");
+        showBtn.onclick = (()=>{
+         if(passField.type === "password"){
+           passField.type = "text";
+           showBtn.classList.add("hide-btn");
+         }else{
+           passField.type = "password";
+           showBtn.classList.remove("hide-btn");
+         }
+       });
+    </script>
 </html>

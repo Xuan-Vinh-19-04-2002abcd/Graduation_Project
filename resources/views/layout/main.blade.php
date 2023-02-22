@@ -3,17 +3,23 @@
 <head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="assets/CSS/main/app.css">
-		<link rel="stylesheet" href="assets/CSS/main/app-dark.css">
+		<link rel="stylesheet" href="/assets/CSS/main/app.css">
+		<link rel="stylesheet" href="/assets/CSS/main/app-dark.css">
+	
+
 		<!-- <link rel="stylesheet" href="assets/CSS/main/custom-styles.css"> -->
-		<link rel="shortcut icon" href="assets/Images/logo/logo.png" type="image/x-icon">
-		<link rel="shortcut icon" href="assets/Images/logo/logo.png" type="image/png">
+		<link rel="shortcut icon" href="/assets/Images/logo/logo.png" type="image/x-icon">
+		<link rel="shortcut icon" href="/assets/Images/logo/logo.png" type="image/png">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" 
 		rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-		<link rel="stylesheet" href="assets/CSS/shared/iconly.css">
+		<link rel="stylesheet" href="/assets/CSS/shared/iconly.css">
+
+    
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
 				integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
 				crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+				@stack('stylesheets')
 </head>
 
 
@@ -25,7 +31,7 @@
 										<div class="d-flex justify-content-between align-items-center">
 												<div class="logo">
 														<a href="index.html">
-																<img src="assets/Images/logo.png" alt="Logo" style="height: 5rem; border-radius: 50%"
+																<img src="/assets/Images/logo.png" alt="Logo" style="height: 5.2rem; border-radius: 50%"
 																		srcset="">
 														</a>
 												</div>
@@ -70,7 +76,7 @@
 												<li class="sidebar-title">Menu</li>
 
 												<li class="sidebar-item" id="homePage">
-														<a href="{{route('home.index')}}" class='sidebar-link'>
+														<a href="{{route('dashboard')}}" class='sidebar-link'>
 																<i class="bi bi-grid-fill"></i>
 																<span>Dashboard</span>
 														</a>
@@ -93,10 +99,10 @@
 																<span>Football Field </span>
 														</a>
 												</li>
-												<li class="sidebar-item" id="locationPage">
-														<a href="" class='sidebar-link'>
+												<li class="sidebar-item" id="reviewPage">
+														<a href="{{route('showReviews')}}" class='sidebar-link'>
 																<i class="bi bi-grid-fill"></i>
-																<span>Location</span>
+																<span>Review</span>
 														</a>
 												</li>
 												<li class="sidebar-item" id="servicesPage">
@@ -140,10 +146,7 @@
 		</div>
 		<script src="/assets/JS/app.js"></script>
 		<script src="/assets/JS/dashboard.js"></script>
-		<script>
-				var page = "{{ Session('page') }}"
-				document.getElementById(page).classList.add("active")
-		</script>
+		
 		@yield('scripts')
 </body>
 

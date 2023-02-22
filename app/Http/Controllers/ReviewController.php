@@ -19,4 +19,10 @@ class ReviewController extends Controller
             "data" => $this->reviewService->getAllReview($pitch_id)
         ]);
     }
+
+      //Admin
+      public function showReviews(){
+        $reviews = $this->reviewService->adminAllReviews();
+        return view('pages.reviews.index',compact('reviews'));
+    }
 }

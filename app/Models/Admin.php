@@ -9,5 +9,6 @@ class Admin extends Model
 {
     use HasFactory;
     protected $table = "admins";
+    protected $guarded = 'admin';
     protected $fillable = ["username","password"];
 }
