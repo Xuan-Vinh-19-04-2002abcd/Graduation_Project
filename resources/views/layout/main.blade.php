@@ -106,9 +106,9 @@
 														</a>
 												</li>
 												<li class="sidebar-item" id="servicesPage">
-														<a href="" class='sidebar-link'>
+														<a href="{{route('showBookings')}}" class='sidebar-link'>
 																<i class="bi bi-grid-fill"></i>
-																<span>Services</span>
+																<span>Bookings</span>
 														</a>
 												</li>
 										</ul>
