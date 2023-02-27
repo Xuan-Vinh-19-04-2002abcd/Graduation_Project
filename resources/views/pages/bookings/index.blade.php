@@ -7,11 +7,13 @@
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">User</th>
-            <th scope="col">Content</th>
-            <th scope="col">Images</th>
-            <th scope="col">Created At</th>
-            <th scope="col">Action</th>
+            <th scope="col">Pitch's name</th>
+            <th scope="col">User's name</th>
+            <th scope="col">Day</th>
+            <th scope="col">Time</th>
+            <th scope="col">User's contact</th>
+            <th scope="col">Description</th>
+            <th scope="col">Status</th>
         </tr>
     </thead>
     
@@ -19,19 +21,18 @@
         @php
         
         @endphp
-        @foreach ( $posts as $post)
+        @foreach ( $bookings as $booking)
         <tr>
-            <td>{{ $post->fullname }}</td>
-            <td>{{ $post->content}}</td>
-            <td><img src="{{$post->image}}" alt="image" style="height: 80px; width:100px"><img></td>
-            <td>{{ date_create($post->created_at)->format("d-m-Y H:i:s")}}</td>
+            <td>{{ $booking->namepitch }}</td>
+            <td>{{ $booking->fullname}}</td>
+            <td>{{ $booking->day}}</td>
+            <td>{{ $booking->time}}</td>
+            <td>{{ $booking->contact}}</td>
+            <td>{{ $booking->description}}</td>
             <td>
-        <form role="form" action="{{route('post.delete',$post->id)}}" method="post">
-                @csrf
-                <button type="submit" class="btn btn-danger">
-                        <i class="bi bi-trash-fill"></i>
-                    </button>
-                </form>
+                <button class="btn btn-danger mb-2">
+                    {{ $booking->status}}
+                </button>
             </td>
         </tr>
         @endforeach

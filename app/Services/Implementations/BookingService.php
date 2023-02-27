@@ -34,6 +34,13 @@ class BookingService implements IBookingService {
         return $this->bookingRepository->detailBooking($booking_id);
     }
 
+    public function adminAllBookings():array
+    {
+        $data = $this->bookingRepository->adminAllBooking()->toarray();
+         
+        return $data;
+    }
+
     public function mapSocer($booking_id,$user_id_away):mixed
     {
         return $this->bookingRepository->Match($booking_id,$user_id_away);

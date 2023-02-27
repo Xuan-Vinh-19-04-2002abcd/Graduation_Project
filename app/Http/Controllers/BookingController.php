@@ -55,6 +55,12 @@ class BookingController extends Controller
         );
     }
 
+    //Admin
+
+    public function showBookings(){
+        $bookings = $this->bookingService->adminAllBookings();
+        return view('pages.bookings.index',compact('bookings'));
+    }
     public function Match(Request $request){
 
         $booking_id = $request->input("booking_id");
