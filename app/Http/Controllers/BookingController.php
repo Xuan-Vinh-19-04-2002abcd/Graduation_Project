@@ -55,4 +55,11 @@ class BookingController extends Controller
         );
     }
 
+    //Admin
+
+    public function showBookings(){
+        $bookings = $this->bookingService->adminAllBookings();
+        return view('pages.bookings.index',compact('bookings'));
+    }
+
 }

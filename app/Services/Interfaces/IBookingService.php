@@ -6,5 +6,6 @@ interface IBookingService{
     public function getAllBooking($user_id):mixed;
     public function detailBooking($booking_id): mixed;
     public function searchBooking($textsearch): mixed;
+    public function adminAllBookings():array;
   
 }
