@@ -6,6 +6,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
 				integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
 				crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 @section('content')
 <table class="table">
     <thead>
@@ -37,12 +38,12 @@
             <td><img src={{$customer->avatar}} alt="image" style="height: 80px; width:100px"><img></td>
             <td>{{ date_create($customer->created_at)->format("d-m-Y H:i:s")}}</td>
             <td>
-                <button class="btn btn-danger mb-2">
-                    <i class="bi bi-x-octagon-fill"></i>
+                <button class="btn btn-success mb-2">
+                    <i class="fas fa-eye icon"></i>
                 </button>
                 <form action="" method="POST">
                     <button type="submit" class="btn btn-danger">
-                        <i class="bi bi-trash-fill"></i>
+                        <i class="fas fa-eye-slash"></i>
                     </button>
                 </form>
             </td>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\PitchController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ReviewController;
@@ -42,6 +43,9 @@ Route::prefix("post")->group(function(){
     Route::post('/delete/{id}', [PostController::class, "deletePosts"])->name("post.delete");
 });
 Route::get("review", [ReviewController::class, "showReviews"])->name("showReviews");
+Route::prefix("booking")->group(function () {
+    Route::get("/", [BookingController::class, "showBookings"])->name("showBookings");;
+});
 Route::prefix("/")->group(function () {
     Route::get("/",[HomeController::class,"getAdmin"])->name("login.index");
     Route::post('/post', [HomeController::class, "loginAdmin"])->name("loginAdmin");
