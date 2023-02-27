@@ -57,6 +57,13 @@ class BookingRepository extends BaseRepository implements \App\Repositories\Inte
         ->join('pitchs','pitchs.id','=','bookings.pitch_id')
         ->join('users','users.id','=','bookings.pitch_id')
         ->whereNull('bookings.user_id_away')
-        ->get();       
+        ->get();  
+    }     
+    public function Match($booking_id,$user_id_away):mixed
+    {
+        DB::table('bookings')
+        -> where('id',$booking_id)
+        ->update(array('user_id_away'=> $user_id_away,'status'=>"done"));
+        return "Match successfully";
     }
 }

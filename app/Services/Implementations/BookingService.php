@@ -41,4 +41,8 @@ class BookingService implements IBookingService {
         return $data;
     }
 
+    public function mapSocer($booking_id,$user_id_away):mixed
+    {
+        return $this->bookingRepository->Match($booking_id,$user_id_away);
+    }
 }
