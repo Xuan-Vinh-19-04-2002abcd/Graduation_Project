@@ -10,4 +10,6 @@ interface IBookingRepository extends IRepository
 
     public function detailBooking($booking_id): mixed;
     public function getAllBooking($user_id): mixed;
+
+    public function Match($booking_id,$user_id_away):mixed;
 }

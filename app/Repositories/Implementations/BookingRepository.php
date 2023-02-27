@@ -50,4 +50,11 @@ class BookingRepository extends BaseRepository implements \App\Repositories\Inte
         ->where('bookings.id',$booking_id)
         ->get(); 
     }
+    public function Match($booking_id,$user_id_away):mixed
+    {
+        DB::table('bookings')
+        -> where('id',$booking_id)
+        ->update(array('user_id_away'=> $user_id_away,'status'=>"done"));
+        return "Match successfully";
+    }
 }
