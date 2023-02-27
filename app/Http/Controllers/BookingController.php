@@ -55,4 +55,16 @@ class BookingController extends Controller
         );
     }
 
+    public function Match(Request $request){
+
+        $booking_id = $request->input("booking_id");
+        $user_id_away = $request->input("user_id_away");
+        $this->bookingService->mapSocer($booking_id,$user_id_away);
+        return response() ->json (
+            [
+                "message" => "Maped Successfully"
+            ]
+            );
+    }
+
 }

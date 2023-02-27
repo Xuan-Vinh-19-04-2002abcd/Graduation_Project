@@ -44,8 +44,7 @@ Route::post("/bookings", [BookingController::class, "createBooking"]);
 Route::get("/allbookings", [BookingController::class, "getAllBookings"]);
 Route::post("/bookings/search", [BookingController::class, "searchBooking"]);
 Route::get("/detailBooking", [BookingController::class, "detailBooking"]);
-
-
+Route::post("/matchSocer",[BookingController::class,"Match"]);
 
 Route::post("/matchs", [MatchController::class, "matchSocer"]);
 
