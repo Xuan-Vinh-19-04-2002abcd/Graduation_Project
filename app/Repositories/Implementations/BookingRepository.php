@@ -50,4 +50,13 @@ class BookingRepository extends BaseRepository implements \App\Repositories\Inte
         ->where('bookings.id',$booking_id)
         ->get(); 
     }
+    public function adminAllBooking():mixed
+    {
+        return  DB::table('bookings')
+        ->select('bookings.id','users.fullname','bookings.user_id','pitchs.namepitch','bookings.day','bookings.time','bookings.contact','bookings.description','bookings.status')
+        ->join('pitchs','pitchs.id','=','bookings.pitch_id')
+        ->join('users','users.id','=','bookings.pitch_id')
+        ->whereNull('bookings.user_id_away')
+        ->get();       
+    }
 }

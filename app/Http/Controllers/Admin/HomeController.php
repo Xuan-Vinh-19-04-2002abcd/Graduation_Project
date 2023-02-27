@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admin;
+// use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
@@ -26,10 +27,9 @@ class HomeController extends Controller
         ]);
   
         $adminInfo = $validator->validated();
-
         $isAdmin = Admin::where("username", $adminInfo['username'])->where("password",$adminInfo['password'])->exists();
         if ($isAdmin) {
-            return redirect()->route("home.index")->with('success', 'You are Logged in sucessfully.');
+            return redirect()->route("dashboard")->with('success', 'You are Logged in sucessfully.');
         } else {
             return view("pages.login")->with('error', 'Whoops! invalid email and password.');;
         }
@@ -37,4 +37,23 @@ class HomeController extends Controller
     public function logout(){
         return view("pages.login");
     }
+        
+    //     if(auth()->guard('admin')->attempt(['username' => $request->input('username'),  'password' => $request->input('password')])){
+    //         $admin = auth()->guard('admin');
+    //         if($admin->is_admin == 1){
+    //             return redirect()->route("home.index")->with('success', 'You are Logged in sucessfully.');
+    //         }
+    //     }else {
+    //         return view("pages.login")->with('error', 'Whoops! invalid email and password.');;
+    //     }
+    // }
+ 
+    // public function logout(Request $request)
+    // {
+    //     auth()->guard('admin')->logout();
+    //     Session::flush();
+    //     Session::put('success', 'You are logout sucessfully');
+    //     return view("pages.login");
+    // }
+ 
 }
