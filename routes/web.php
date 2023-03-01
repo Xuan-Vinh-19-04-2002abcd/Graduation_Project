@@ -20,9 +20,7 @@ use App\Http\Controllers\ReviewController;
 */
 
 
-Route::get('home', function () {
-    return view('layout.main');
-})->name("home.index");;
+
 Route::get('dashboard', function () {
     return view('pages.index');
 })->name("dashboard");;
@@ -48,6 +46,6 @@ Route::prefix("booking")->group(function () {
 });
 Route::prefix("/")->group(function () {
     Route::get("/",[HomeController::class,"getAdmin"])->name("login.index");
-    Route::post('/post', [HomeController::class, "loginAdmin"])->name("loginAdmin");
+    Route::post('/postLogin', [HomeController::class, "loginAdmin"])->name("loginAdmin");
 });
 Route::get("logout",[HomeController::class, "logout"]);
