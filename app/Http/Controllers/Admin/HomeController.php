@@ -29,9 +29,9 @@ class HomeController extends Controller
         $adminInfo = $validator->validated();
         $isAdmin = Admin::where("username", $adminInfo['username'])->where("password",$adminInfo['password'])->exists();
         if ($isAdmin) {
-            return redirect()->route("dashboard")->with('success', 'You are Logged in sucessfully.');
+            return redirect()->route("dashboard")->with('success', 'Bạn đã đăng nhập thành công!');
         } else {
-            return view("pages.login")->with('error', 'Whoops! invalid email and password.');;
+            return back()->with('error', 'Tên đăng nhập và mật khẩu khong hợp lệ. Xin hãy nhập lại!');;
         }
     }
     public function logout(){
