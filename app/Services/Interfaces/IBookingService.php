@@ -9,4 +9,7 @@ interface IBookingService{
     public function adminAllBookings():array;
   
     public function mapSocer($booking_id,$user_id_away):mixed;
+
+
+    public function showMap($user_id):mixed;
 }

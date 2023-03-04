@@ -73,4 +73,14 @@ class BookingController extends Controller
             );
     }
 
+    public function showMaths(Request $request)
+    {
+        $user_id = $request->input("user_id");
+        return response() ->json(
+            [
+                "message" =>" Find Successfully",
+                "data" => $this->bookingService->showMap($user_id)
+            ]
+            );
+    }
 }
