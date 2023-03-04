@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ReviewController;
-
+use App\Services\Implementations\AccountService;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +28,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/register', [RegisterController::class, 'register']);
 Route::post('/fogotpassword', [RegisterController::class, 'fogotPassword']);
 Route::post('/login', [AuthController::class,'login']);
-
-
+Route::post("/user",[RegisterController::class,"getUser"]);
 
 Route::get("/pitchs", [PitchController::class, "getallPitchs"]);
 Route::get("/pitchs/detail", [PitchController::class, "getDetailPitch"]);

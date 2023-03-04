@@ -50,4 +50,16 @@ class RegisterController extends Controller
             203
         );
     }
+
+    public function getUser(Request $request)
+
+    {
+        $user_id = $request->input("user_id");
+        return response() ->json(
+            [
+                "message" => "Find Successfully",
+                "data" => $this->accountService->getUser($user_id)
+            ]
+            );
+    }
 }
