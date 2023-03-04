@@ -2,6 +2,8 @@
 
 namespace App\Repositories\Interfaces;
 
+use Illuminate\Foundation\Mix;
+
 interface IBookingRepository extends IRepository
 {
     public function searchBooking($textSearch): mixed;
@@ -13,4 +15,6 @@ interface IBookingRepository extends IRepository
     public function adminAllBooking():mixed;
 
     public function Match($booking_id,$user_id_away):mixed;
+
+    public function showMatch($user_id):mixed;
 }

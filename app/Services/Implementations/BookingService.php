@@ -45,4 +45,14 @@ class BookingService implements IBookingService {
     {
         return $this->bookingRepository->Match($booking_id,$user_id_away);
     }
+
+
+    public function showMap($user_id):mixed
+    {
+        $matchs = $this->bookingRepository->showMatch($user_id);
+        foreach($matchs as $value){
+            $value->image= config("app.url").'/'.$value->image;
+        } 
+        return $matchs;
+    }
 }
