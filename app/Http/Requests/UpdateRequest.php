@@ -28,7 +28,7 @@ class UpdateRequest extends FormRequest
     {
         return [
             "fullname" => 'required|max:20',
-            "phonenumber" => 'required|numeric|max:10',
+            "phonenumber" => 'required|max:10',
             'email' => 'required|max:255|email',
 
         ];
@@ -39,7 +39,6 @@ class UpdateRequest extends FormRequest
             'fullname.required' => 'Name is required',
             'fullname.max' => 'The length of fullname less to 2 chacracters',
             'phonenumber.required' => 'Phone number is required',
-            'phonenumber.numeric' => 'Umformat Phonenumber',
             'phonenumber.max' => 'Have to 10 numbers',
             'email.required' => 'Email is required',
             'email.email'=> "Unformat Email",
