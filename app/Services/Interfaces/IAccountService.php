@@ -11,4 +11,5 @@ interface IAccountService {
     public function getAllCustommer(): mixed;
     public function getUser($user_id):mixed;
     
+    public function updateUser($data):mixed;
 }

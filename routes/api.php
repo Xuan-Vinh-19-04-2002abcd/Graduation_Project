@@ -29,6 +29,7 @@ Route::post('/register', [RegisterController::class, 'register']);
 Route::post('/fogotpassword', [RegisterController::class, 'fogotPassword']);
 Route::post('/login', [AuthController::class,'login']);
 Route::post("/user",[RegisterController::class,"getUser"]);
+Route::post("/updateUser",[RegisterController::class,"updateUser"]);
 
 Route::get("/pitchs", [PitchController::class, "getallPitchs"]);
 Route::get("/pitchs/detail", [PitchController::class, "getDetailPitch"]);

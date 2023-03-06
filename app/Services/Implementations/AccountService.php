@@ -66,4 +66,9 @@ class AccountService implements  IAccountService {
       {
           return $this->userRepository->findById($user_id);
       }
+
+      public function updateUser($data):mixed
+      {
+        return $this->userRepository->updateUser($data);
+      }
 }
