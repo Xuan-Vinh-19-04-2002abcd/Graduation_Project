@@ -77,7 +77,6 @@ class BookingRepository extends BaseRepository implements \App\Repositories\Inte
         ->where('bookings.user_id',$user_id)
         ->whereNotNull('bookings.user_id_away')
         ->get();
-
         
         }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterRequest;
+use App\Http\Requests\UpdateRequest;
 use App\Services\Interfaces\IAccountService;
 use App\Services\Interfaces\IMailService;
 use Illuminate\Http\Request;
@@ -61,5 +62,18 @@ class RegisterController extends Controller
                 "data" => $this->accountService->getUser($user_id)
             ]
             );
+    }
+
+    public function updateUser(UpdateRequest $request)
+
+    {
+            $data = $request->all();
+
+            return response() ->json(
+                [
+                    "message" => "Updatewq Successfully",
+                    "data" => $this->accountService->updateUser(array($data))
+                ]
+                );
     }
 }
