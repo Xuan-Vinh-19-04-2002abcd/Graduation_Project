@@ -28,10 +28,22 @@ class PostFactory extends Factory
             "Mình đang muốn tìm sân đá bóng ở Hòa Vang , ai biết chỗ nào đáng tin cậy không nhỉ?",
             "Tìm sân đá bóng ở quận 5, có ai biết chỗ nào chất lượng không? Giới thiệu giúp mình với!"
         ];
+        $array_image = [
+            "storage//images/products/anh1.png",
+            "storage//images/products/anh2.png",
+            "storage//images/products/post.png",
+            "storage//images/products/pos.png",
+            "storage//images/products/anhcbd.jpg",
+            "storage//images/products/anhphui.png",
+            "storage//images/products/covu.png",
+            "storage//images/products/ff.png",
+            "storage//images/products/images.png",
+            "storage//images/products/phuiphui.png",
+        ];
         return [
             'user_id' =>rand(1000000,1000009),
             'content' => $array_content[rand(0,9)],
-            'image' => fake()->imageUrl()
+            'image' => $array_image[rand(0,9)]
         ];
     }
 }
