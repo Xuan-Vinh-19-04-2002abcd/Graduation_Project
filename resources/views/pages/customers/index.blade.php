@@ -11,12 +11,12 @@
 <table class="table">
     <thead>
         <tr>
+            <th scope="col">No.</th>
             <th scope="col">FullName</th>
             <th scope="col">Email</th>
             <th scope="col">Phone Number</th>
             <th scope="col">Avatar</th>
             <th scope="col">Created At</th>
-            <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -30,18 +30,20 @@
             </td>
         </tr>
         @else
-        @foreach ($customers as $customer)
+        @foreach ($customers as $key => $customer)
+        
         <tr>
+            <td>{{ $key+1 }}</td>
             <td>{{ $customer->fullname }}</td>
             <td>{{ $customer->email }}</td>
             <td>{{ $customer->phonenumber }}</td>
             <td><img src={{$customer->avatar}} alt="image" style="height: 80px; width:100px"><img></td>
             <td>{{ date_create($customer->created_at)->format("d-m-Y H:i:s")}}</td>
-            <td>
+            {{-- <td>
                 <button class="btn btn-success mb-2">
                     <i class="fas fa-eye icon"></i>
                 </button>
-            </td>
+            </td> --}}
         </tr>
         @endforeach
         @endif
