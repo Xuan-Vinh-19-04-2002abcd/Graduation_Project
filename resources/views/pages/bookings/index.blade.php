@@ -7,6 +7,7 @@
 <table class="table">
     <thead>
         <tr>
+            <th scope="col">No.</th>
             <th scope="col">Pitch's name</th>
             <th scope="col">User's name</th>
             <th scope="col">Day</th>
@@ -21,8 +22,9 @@
         @php
         
         @endphp
-        @foreach ( $bookings as $booking)
+        @foreach ( $bookings as $key => $booking)
         <tr>
+            <td>{{ $key+1}}</td>
             <td>{{ $booking->namepitch }}</td>
             <td>{{ $booking->fullname}}</td>
             <td>{{ $booking->day}}</td>
@@ -31,7 +33,7 @@
             <td>{{ $booking->description}}</td>
             <td>
                 <button class="btn btn-danger mb-2">
-                    {{ $booking->status}}
+                    Pending
                 </button>
             </td>
         </tr>
