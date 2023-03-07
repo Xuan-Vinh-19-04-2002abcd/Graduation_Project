@@ -7,6 +7,7 @@
 <table class="table">
     <thead>
         <tr>
+            <th scope="col">No.</th>
             <th scope="col">User's Name</th>
             <th scope="col">Avatar</th>
             <th scope="col">Pitch's Name</th>
@@ -18,8 +19,9 @@
         @php
         
         @endphp
-        @foreach ( $reviews as $review)
+        @foreach ( $reviews as $key => $review)
         <tr>
+            <td>{{$key+1}}</td>
             <td>{{ $review->fullname }}</td>
             <td><img src="{{$review->avatar}}" alt="image" style="height: 80px; width:100px"><img></td>
             <td>{{ $review->namepitch}}</td>

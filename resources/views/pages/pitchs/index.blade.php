@@ -7,6 +7,7 @@
 <table class="table">
     <thead>
         <tr>
+            <th scope="col">No.</th>
             <th scope="col">Pitch's Name</th>
             <th scope="col">Address</th>
             <th scope="col">Phone Number</th>
@@ -27,8 +28,9 @@
         @php
 
         @endphp
-        @foreach ( $pitchs as $pitch)
+        @foreach ( $pitchs as $key => $pitch)
         <tr>
+            <td>{{ $key+1}}</td>
             <td>{{ $pitch["namepitch"]}}</td>
             <td>{{ $pitch["address"] }}</td>
             <td>{{ $pitch["phonenumber"] }}</td>

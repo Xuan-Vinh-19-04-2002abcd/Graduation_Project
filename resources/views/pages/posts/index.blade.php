@@ -7,6 +7,7 @@
 <table class="table">
     <thead>
         <tr>
+            <th scope="col">No.</th>
             <th scope="col">User</th>
             <th scope="col">Content</th>
             <th scope="col">Images</th>
@@ -19,8 +20,9 @@
         @php
         
         @endphp
-        @foreach ( $posts as $post)
+        @foreach ( $posts as $key => $post)
         <tr>
+            <td>{{ $key+1 }}</td>
             <td>{{ $post->fullname }}</td>
             <td>{{ $post->content}}</td>
             <td><img src="{{$post->image}}" alt="image" style="height: 80px; width:100px"><img></td>
