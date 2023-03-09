@@ -74,8 +74,7 @@ class BookingRepository extends BaseRepository implements \App\Repositories\Inte
         ->join('pitchs','pitchs.id','=','bookings.pitch_id')
         ->join('users','users.id','=','bookings.user_id')
         ->join('users as away_users','away_users.id','=','bookings.user_id_away')
-        ->where('bookings.user_id',$user_id)
-        ->whereNotNull('bookings.user_id_away')
+        ->where('bookings.user_id_away',$user_id)
         ->get();
         
         }
