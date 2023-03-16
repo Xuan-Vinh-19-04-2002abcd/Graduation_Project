@@ -16787,16 +16787,16 @@ label {
     opacity: 0.2; }
 
 .icon-shape-primary {
-  color: #1F2937;
-  background-color: rgba(31, 41, 55, 0.3); }
+  color: #41536c;
+  background-color: rgb(55 83 122 / 30%); }
 
 .icon-shape-secondary {
-  color: #fb503b;
-  background-color: rgba(251, 80, 59, 0.3); }
+  color: #cd5d50;
+  background-color: rgb(49 145 25 / 56%);}
 
 .icon-shape-tertiary {
   color: #31316A;
-  background-color: rgba(49, 49, 106, 0.3); }
+  background-color: #a0a9b7; }
 
 .icon-shape-success {
   color: #10B981;

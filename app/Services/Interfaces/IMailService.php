@@ -4,4 +4,6 @@ use App\Models\User;
 
 interface IMailService {
     public function sendMail(User $user);
+
+    public function contactAdmin($array);
 }

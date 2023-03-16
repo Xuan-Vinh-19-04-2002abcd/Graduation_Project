@@ -1,4 +1,5 @@
 @extends('layout.main')
+{{-- <link rel="stylesheet" href="/assets/CSS/main/volt.css"> --}}
 <link rel="stylesheet" href="/assets/CSS/main/volt.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -190,7 +191,7 @@
                         <div class="col-12 col-xl-7 px-xl-0">
                             <div class="d-none d-sm-block">
                                 <h2 class="h6 text-gray-400 mb-0">Customers</h2>
-                                <h3 class="fw-extrabold mb-2">345k</h3>
+                                <h3 class="fw-extrabold mb-2">34</h3>
                             </div>
                             <small class="d-flex align-items-center text-gray-500">
                                 Feb 1 - Apr 1,
@@ -208,7 +209,8 @@
                                         <path fill-rule="evenodd"
                                             d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
                                             clip-rule="evenodd"></path>
-                                    </svg><span class="text-success fw-bolder">22%</span></div>
+                                            
+                                    </svg><span class="text-success fw-bolder">8%</span></div>
                             </div>
                         </div>
                     </div>
@@ -230,14 +232,14 @@
                                 </svg>
                             </div>
                             <div class="d-sm-none">
-                                <h2 class="fw-extrabold h5">Revenue</h2>
-                                <h3 class="mb-1">$43,594</h3>
+                                <h2 class="fw-extrabold h5">Football Fields</h2>
+                                <h3 class="mb-1">43</h3>
                             </div>
                         </div>
                         <div class="col-12 col-xl-7 px-xl-0">
                             <div class="d-none d-sm-block">
-                                <h2 class="h6 text-gray-400 mb-0">Revenue</h2>
-                                <h3 class="fw-extrabold mb-2">$43,594</h3>
+                                <h2 class="h6 text-gray-400 mb-0">Football Fields</h2>
+                                <h3 class="fw-extrabold mb-2">43</h3>
                             </div>
                             <small class="d-flex align-items-center text-gray-500">
                                 Feb 1 - Apr 1,
@@ -250,12 +252,12 @@
                                 GER
                             </small>
                             <div class="small d-flex mt-1">
-                                <div>Since last month <svg class="icon icon-xs text-danger" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                            clip-rule="evenodd"></path>
-                                    </svg><span class="text-danger fw-bolder">2%</span></div>
+                                <div>Since last month <svg class="icon icon-xs text-success" fill="currentColor"
+                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                                        clip-rule="evenodd"></path>
+                                        </svg><span class="text-success fw-bolder">4%</span></div>
                             </div>
                         </div>
                     </div>
@@ -269,7 +271,7 @@
                         <div
                             class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
                             <div class="icon-shape icon-shape-tertiary rounded me-4 me-sm-0">
-                                <svg class="icon" fill="currentColor" viewBox="0 0 20 20"
+                                <svg class="icon" viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
                                         d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z"
@@ -277,14 +279,14 @@
                                 </svg>
                             </div>
                             <div class="d-sm-none">
-                                <h2 class="fw-extrabold h5"> Bounce Rate</h2>
-                                <h3 class="mb-1">50.88%</h3>
+                                <h2 class="fw-extrabold h5"> Bookings</h2>
+                                <h3 class="mb-1">50</h3>
                             </div>
                         </div>
                         <div class="col-12 col-xl-7 px-xl-0">
                             <div class="d-none d-sm-block">
-                                <h2 class="h6 text-gray-400 mb-0"> Bounce Rate</h2>
-                                <h3 class="fw-extrabold mb-2">50.88%</h3>
+                                <h2 class="h6 text-gray-400 mb-0"> Bookings</h2>
+                                <h3 class="fw-extrabold mb-2">50</h3>
                             </div>
                             <small class="text-gray-500">
                                 Feb 1 - Apr 1
@@ -295,7 +297,7 @@
                                         <path fill-rule="evenodd"
                                             d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
                                             clip-rule="evenodd"></path>
-                                    </svg><span class="text-success fw-bolder">4%</span></div>
+                                    </svg><span class="text-success fw-bolder">5%</span></div>
                             </div>
                         </div>
                     </div>

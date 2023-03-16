@@ -20,7 +20,7 @@ use App\Http\Controllers\ReviewController;
 */
 
 
-
+Route::get('landingpage',function() {return view('layout.landingPage');})->name('landingPage');;
 Route::get('dashboard', function () {
     return view('pages.index');
 })->name("dashboard");;
@@ -49,3 +49,5 @@ Route::prefix("/")->group(function () {
     Route::post('/postLogin', [HomeController::class, "loginAdmin"])->name("loginAdmin");
 });
 Route::get("logout",[HomeController::class, "logout"]);
+
+Route::post('/contactForm',[UserController::class,"contactForm"])->name("contactForm");
