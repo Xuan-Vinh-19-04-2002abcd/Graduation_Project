@@ -191,7 +191,7 @@
                         <div class="col-12 col-xl-7 px-xl-0">
                             <div class="d-none d-sm-block">
                                 <h2 class="h6 text-gray-400 mb-0">Customers</h2>
-                                <h3 class="fw-extrabold mb-2">34</h3>
+                                <h3 class="fw-extrabold mb-2">{{$countCustommer}}</h3>
                             </div>
                             <small class="d-flex align-items-center text-gray-500">
                                 Feb 1 - Apr 1,
@@ -233,13 +233,13 @@
                             </div>
                             <div class="d-sm-none">
                                 <h2 class="fw-extrabold h5">Football Fields</h2>
-                                <h3 class="mb-1">43</h3>
+                                <h3 class="mb-1">{{$countPitchs}}</h3>
                             </div>
                         </div>
                         <div class="col-12 col-xl-7 px-xl-0">
                             <div class="d-none d-sm-block">
                                 <h2 class="h6 text-gray-400 mb-0">Football Fields</h2>
-                                <h3 class="fw-extrabold mb-2">43</h3>
+                                <h3 class="fw-extrabold mb-2">{{$countPitchs}}</h3>
                             </div>
                             <small class="d-flex align-items-center text-gray-500">
                                 Feb 1 - Apr 1,
@@ -280,13 +280,13 @@
                             </div>
                             <div class="d-sm-none">
                                 <h2 class="fw-extrabold h5"> Bookings</h2>
-                                <h3 class="mb-1">50</h3>
+                                <h3 class="mb-1">{{$countBookings}}</h3>
                             </div>
                         </div>
                         <div class="col-12 col-xl-7 px-xl-0">
                             <div class="d-none d-sm-block">
                                 <h2 class="h6 text-gray-400 mb-0"> Bookings</h2>
-                                <h3 class="fw-extrabold mb-2">50</h3>
+                                <h3 class="fw-extrabold mb-2">{{$countBookings}}</h3>
                             </div>
                             <small class="text-gray-500">
                                 Feb 1 - Apr 1
