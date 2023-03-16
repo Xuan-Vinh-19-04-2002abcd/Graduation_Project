@@ -7,6 +7,7 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\PitchController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\StatisticalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +22,7 @@ use App\Http\Controllers\ReviewController;
 
 
 Route::get('landingpage',function() {return view('layout.landingPage');})->name('landingPage');;
-Route::get('dashboard', function () {
-    return view('pages.index');
-})->name("dashboard");;
+Route::get('dashboard',[StatisticalController::class,"statistical"])->name("dashboard");;
 Route::prefix("/custommer")->group(function () {
     Route::get("", [UserController::class, "getAllCustommer"])->name("customers.index");;
 });
