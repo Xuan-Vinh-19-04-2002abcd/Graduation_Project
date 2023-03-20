@@ -14,7 +14,7 @@ class PitchRepository extends BaseRepository implements \App\Repositories\Interf
     public function searchPitch($textSearch): mixed
     {
         return $this->model->select('id','namepitch','address','phonenumber','image','price_hour')
-        ->Where("namepitch", "LIKE","%$textSearch")
+        ->Where("namepitch", "LIKE","%$textSearch%")
         ->orWhere("address", "LIKE","%$textSearch%")->get();
         
     }
